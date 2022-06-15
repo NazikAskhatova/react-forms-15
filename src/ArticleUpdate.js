@@ -18,7 +18,7 @@ function ArticleUpdate() {
   const onFormSubmit = function (event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-
+// axios.put обновление
     axios.put(
       `https://limon-kg-default-rtdb.firebaseio.com/articles/${id}.json`,
       Object.fromEntries(formData.entries())

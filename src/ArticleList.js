@@ -5,11 +5,10 @@ function ArticleList() {
   const [articles, setArticles] = useState(null);
 
   useEffect(function () {
-    axios.get("https://limon-kg-default-rtdb.firebaseio.com/articles/json")
+    axios
+      .get("https://limon-kg-default-rtdb.firebaseio.com/articles/json")
       .then(({ data }) => {
-       setArticles(
-           Object.keys(data).map(id => ({ id: id, ...data[id] }))
-      );
+        setArticles(Object.keys(data).map((id) => ({ id: id, ...data[id] })));
       });
   }, []);
 
@@ -17,16 +16,14 @@ function ArticleList() {
   if (articles !== null) {
     output = articles.map((article) => (
       <li key={article.id}>
-        <Link>{article.text} {article.title}</Link>
+        <Link>
+          {article.text} {article.title}
+        </Link>
       </li>
     ));
   }
 
-  return (
-    <ul className="ArticleList">
-          {output}
-    </ul>
-  );
+  return <ul className="ArticleList">{output}</ul>;
 }
 
 export default ArticleList;
