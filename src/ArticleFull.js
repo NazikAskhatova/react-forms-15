@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-roter-dom"; 
+import { Link } from "react-router-dom";
 
 function ArticleFull() {
     const { id } = useParams();
@@ -17,6 +18,8 @@ function ArticleFull() {
         <>
         <h1>{article.title}</h1>
         <p>{article.description}</p>
+
+        <Link to={`/update/${id}`}>Update</Link> <Link to={`/update/${id}`}>Delete</Link>
             </>
     );
 
