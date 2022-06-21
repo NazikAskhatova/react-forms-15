@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-roter-dom";
+import { useParams } from "react-router-dom";
 
 function ArticleUpdate() {
   const { id } = useParams();
